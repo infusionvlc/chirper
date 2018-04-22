@@ -1,0 +1,17 @@
+<h1><%= @user.username %></h1>
+
+<% if @condition %>
+  <%= link_to 'Unfollow', "/#{@user.username}/unfollow", method: :post %>
+<% else %>
+  <%= link_to 'Follow', "/#{@user.username}/follow", method: :post %>
+<% end %>
+
+<h2>Followers</h2>
+<% @followers.each do |follower| %>
+  <%= link_to follower.username, "#{follower.username}" %><br/>
+<% end%>
+
+<h2>Following</h2>
+<% @following.each do |following| %>
+  <%= link_to following.username, "#{following.username}" %><br/>
+<% end%>

@@ -1,0 +1,10 @@
+<h1>Chirper</h1>
+
+<% @chirps.each do |chirp| %>
+  <%= chirp.body %><br/>
+  <%= link_to chirp.user.username, "#{chirp.user.username}" %><br/>
+  <%= link_to 'Borrar', chirp_path(chirp.id), method: :delete %>
+  <hr/>
+<% end %>
+
+<%= link_to 'Publicar chirp', new_chirp_path %>

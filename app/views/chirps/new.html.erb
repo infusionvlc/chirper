@@ -1,0 +1,7 @@
+<h1>Añadiendo un chirp</h1>
+
+<%= form_for @chirp do |f| %>
+  <%= f.label :body %><br/>
+  <%= f.text_field :body %><br/>
+  <%= f.submit %>
+<% end %>
